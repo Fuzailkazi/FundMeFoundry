@@ -10,7 +10,7 @@ contract FundMeTest is Test {
     function setUp() public{
         // fundMe = new FundMe(0x694AA1769357215DE4FAC081bf1f309aDC325306);
         DeployFundMe dFundMe = new DeployFundMe();
-        fundMe = dFundMe.run(); 
+        fundMe = dFundMe.run();
     }
 
     function testMinimumDollarIsFive() public{
@@ -18,7 +18,7 @@ contract FundMeTest is Test {
     }
 
     function testOwnerIsMsgSender() public{
-    //    assertEq(fundMe.i_owner(), address(this));
+    //    assertEq(fundMe.i_owner(), address(this)); 
        assertEq(fundMe.i_owner(), msg.sender);
     }
 
@@ -27,5 +27,12 @@ contract FundMeTest is Test {
         uint256 version = fundMe.getVersion();
         assertEq(version,4);
     }
+
+    function testFundFailWithoutEnoughETH() public{
+        vm.expectRevert();
+        fundMe.fund();
+    }
+
+    
     
 }

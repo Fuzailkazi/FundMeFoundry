@@ -87,3 +87,7 @@ contract FundMe {
 // 7. Yul / Assembly
 
 
+// Victor Mono,'fire code' ,'cascadia code', FiraCodeiScript, Consolas, 'Courier New', monospace for solidity 
+// FiraCodeiScript,Victor Mono,'fire code' ,'cascadia code' ,Consolas, 'Courier New', monospace // for front end
+
+
